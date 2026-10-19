@@ -95,7 +95,7 @@ h2{font-size:1.9em;letter-spacing:.2em;margin-right:-.2em;color:var(--gold);text
 @keyframes pop{0%{transform:scale(1.5)}100%{transform:scale(1)}}
 #streak small{font-size:.55em;color:#ffd9a0;margin-right:.2em}
 #fps{font-size:.75em;color:#6d7098;display:none}
-#bossWrap{position:absolute;left:50%;top:.5em;transform:translateX(-50%);width:44%;display:none;text-align:center;padding:.3em .8em .5em}
+#bossWrap{position:absolute;left:50%;top:.5em;transform:translateX(-50%);width:34%;display:none;text-align:center;padding:.3em .8em .5em}
 #bossName{font-family:var(--serif);color:#ffb0a0;font-size:1.1em;letter-spacing:.3em;text-shadow:0 0 .4em #ff2a00,1px 1px 0 #000;margin-bottom:3px}
 .bar{height:.7em;background:#05060ecc;border:1px solid #000;box-shadow:0 0 0 1px #f2c76b40,inset 0 1px 2px #000;position:relative;overflow:hidden}
 .bar>i{position:absolute;left:0;top:0;bottom:0;display:block;transition:width .15s}
@@ -1001,7 +1001,7 @@ function newRun(d){
   towers:[null,null,null,null],rerolls:tl('m2'),wj:0,bossKilled:false,cleared:0,frostT:0,shake:0,flash:0,
   main:{x:CX,y:CY+2,r:11,hp:0,maxHp:0,hitT:0,recoil:0,main:true},walls:[],hazards:[],bolts:[],hole:null,
   timers:{sword:0,thunder:0,ring:0,tick:0,r09:10,r12:8},orbA:0,stageKills:0,stageXp:0,stageStones:0,stoneFrac:0,xpFrac:0,
-  q:[],qi:0,t:0,endT:0,boss:null,corpses:[],pendingLv:0,offers:[],refreshCost:10};
+  q:[],qi:0,t:0,endT:0,boss:null,corpses:[],pendingLv:0,offers:[],refreshCost:10,warns:[]};
  if(tl('g5'))G.towers[0]={type:'sword',lv:1,paid:0,ruined:false,hp:0,maxHp:0};
  G.towers.forEach((t,i)=>{if(t)Object.assign(t,{x:SLOT_POS[i].x,y:SLOT_POS[i].y,r:8,hitT:0})});
  recalc();G.main.hp=G.main.maxHp;for(const t of G.towers)if(t)t.hp=t.maxHp;
@@ -1643,7 +1643,7 @@ const TREE={
  m6:{name:'天機',desc:'法寶品階機率提高一檔（用下一個等級段的機率）',max:1,cost:100,x:6.0,y:-2.9,key:1},
  g1:{name:'根骨',desc:'主塔血量 +5%',max:3,cost:10,x:0,y:1.3},
  g4:{name:'不滅金身',desc:'所有塔受到傷害 −10%',max:1,cost:20,x:-1.7,y:2.1},
- g6:{name:'回春',desc:'每關開始主塔回血 +10%',max:1,cost:40,x:-2.7,y:3.0},
+ g6:{name:'回春',desc:'每關開始主塔回血 35% → 45%',max:1,cost:40,x:-2.7,y:3.0},
  g8:{name:'金剛不壞',desc:'主塔血量低於 30% 時，受到傷害再 −30%',max:1,cost:100,x:-3.7,y:3.9,key:1},
  g2:{name:'福緣',desc:'初始靈石 +30',max:1,cost:20,x:1.7,y:2.1},
  g3:{name:'機緣',desc:'商店法寶格 +1',max:1,cost:40,x:2.7,y:3.0},
